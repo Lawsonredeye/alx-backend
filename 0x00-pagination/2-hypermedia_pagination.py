@@ -74,10 +74,14 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """Returns dict containing param key value"""
         data: list = self.get_page(page, page_size)
-        prev_page: int = page - 1
-        next_page: int = page + 1
+        if data == []:
+            prev_page = None
+            next_page = None
+        else:
+            prev_page: int = page - 1
+            next_page: int = page + 1
 
-        total_pages: int = 0
+        total_pages: int = math.floor(len(self.dataset()) / page_size)
 
         return {
                 'page_size': page_size,
