@@ -81,7 +81,7 @@ class Server:
             prev_page: int = page - 1
             next_page: int = page + 1
 
-        total_pages: int = math.floor(len(self.dataset()) / page_size)
+        total_pages: int = math.ceil(len(self.dataset()) / page_size)
 
         return {
                 'page_size': page_size,
