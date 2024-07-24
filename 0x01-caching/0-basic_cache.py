@@ -1,28 +1,41 @@
-class BaseCaching():
-    """ BaseCaching defines:
-      - constants of your caching system
-      - where your data are stored (in a dictionary)
+#!/usr/bin/env python3
+"""Module for handling basic caching method
+"""
+
+
+class BasicCache(BaseCaching):
+    """Used as an extension of the BaseCaching class which has a method for
+    storing data into the cache dict
     """
-    MAX_ITEMS = 4
-
     def __init__(self):
-        """ Initiliaze
-        """
-        self.cache_data = {}
-
-    def print_cache(self):
-        """ Print the cache
-        """
-        print("Current cache:")
-        for key in sorted(self.cache_data.keys()):
-            print("{}: {}".format(key, self.cache_data.get(key)))
+        """Inherits from the BaseCaching class"""
+        super().__init__()
 
     def put(self, key, item):
-        """ Add an item in the cache
+        """Stores data in a key-value pair format
+
+        Args:
+            key: string or int as a field to serve as a unique identity
+            item: string or int as a value to be stored into a dict
+
+        Returns:
+            nothing
         """
-        raise NotImplementedError("put must be implemented in your cache class")
+        if key and item:
+            self.cache_data[key] = item
 
     def get(self, key):
-        """ Get an item by key
         """
-        raise NotImplementedError("get must be implemented in your cache class")
+        Fetches data from the cache memory based on the key passed
+        and returns None if Key doesn't exists
+
+        Args:
+            key: string, int value which would serve as an id for searching
+            through the dict
+
+        Returns:
+            The value of the found key inside the dictionary
+        """
+        if key is None or self.cache_data.get(key, None) is None:
+            return None
+        return self.cache_data.get(key)
