@@ -16,24 +16,6 @@ class FIFOCache(BaseCaching):
         """
         super().__init__()
 
-    # def put(self, key, item):
-    #     if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-    #         new_cache = [x for x in self.cache_data.items()]
-    #         discarded = new_cache[0]
-
-    #         new_dict = {x: d
-    #   for x, d in self.cache_data.items() if x != discarded[0]}
-    #         print(f"DISCARD: {discarded[0]}")
-    #         self.cache_data = new_dict
-    #         self.cache_data[key] = item
-    #     else:
-    #         self.cache_data[key] = item
-
-    # def get(self, key):
-    #     if key is None or self.cache_data.get(key, None) is None:
-    #         return None
-    #     return self.cache_data.get(key)
-
     def put(self, key, item):
         """assign to the dict self.cache_data the item value for the key key
 
@@ -59,8 +41,6 @@ class FIFOCache(BaseCaching):
             new_dict[key] = item
             self.cache_data = new_dict
             print(f"DISCARD: {discarded[0]}")
-            # self.cache_data[key] = item
-            # self.cache_data = new_dict
 
         else:
             self.cache_data[key] = item
