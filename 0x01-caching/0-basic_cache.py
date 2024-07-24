@@ -3,6 +3,7 @@
 """
 from base_caching import BaseCaching
 
+
 class BasicCache(BaseCaching):
     """Used as an extension of the BaseCaching class which has a method for
     storing data into the cache dict
