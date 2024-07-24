@@ -17,7 +17,6 @@ class LRUCache(BaseCaching):
             key: str or int value which acts as id
             item: str or int value which would be stored as key value
         """
-        
 
     def get(self, key):
         """return the value in self.cache_data linked to key
