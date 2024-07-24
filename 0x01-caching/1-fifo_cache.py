@@ -41,7 +41,9 @@ class FIFOCache(BaseCaching):
             key: str or int value which acts as id
             item: str or int value which would be stored as key value
         """
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+        if key in self.cache_data.keys():
+            self.cache_data[key] = item
+        elif len(self.cache_data) > BaseCaching.MAX_ITEMS - 1:
 
             # Create a list comprehension to get the keys
             new_cache = [x for x in self.cache_data.keys()]
@@ -54,9 +56,12 @@ class FIFOCache(BaseCaching):
                 for x, d in self.cache_data.items()
                 if x != discarded
                         }
-            print(f"DISCARD: {discarded[0]}")
+            new_dict[key] = item
             self.cache_data = new_dict
-            self.cache_data[key] = item
+            print(f"DISCARD: {discarded[0]}")
+            # self.cache_data[key] = item
+            # self.cache_data = new_dict
+
         else:
             self.cache_data[key] = item
 
