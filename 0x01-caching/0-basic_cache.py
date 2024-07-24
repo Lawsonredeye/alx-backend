@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Module for handling basic caching method
 """
-
+from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
     """Used as an extension of the BaseCaching class which has a method for
