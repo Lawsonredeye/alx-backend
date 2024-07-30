@@ -10,6 +10,7 @@ from pytz import UTC
 
 app: Flask = Flask(__name__)
 
+
 class Config:
     """Config settings for flask instance"""
     LANGUAGES = ["en", "fr"]
@@ -21,7 +22,8 @@ app.config.from_object(Config)
 
 babel = Babel(app)
 
-@app.route("/")
+
+@app.route("/", )
 def index() -> str:
     """Homepage route for Holberton webpage"""
     return render_template("index.html")
