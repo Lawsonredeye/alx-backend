@@ -2,6 +2,7 @@
 """Module which handles the web app logic and routes as well as
 the internationalization and localization"""
 
+from pickle import FALSE
 from babel import default_locale
 from flask import Flask
 from flask import render_template
@@ -23,7 +24,7 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@app.route("/", )
+@app.route("/", strict_slashes=False)
 def index() -> str:
     """Homepage route for Holberton webpage"""
     return render_template("index.html")
