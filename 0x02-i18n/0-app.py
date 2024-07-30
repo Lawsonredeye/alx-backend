@@ -2,13 +2,14 @@
 """Module which handles the web app logic and routes as well as
 the internationalization and localization"""
 
+from email.policy import strict
 from flask import Flask
 from flask import render_template
 
 app: Flask = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", strict_slashes=False)
 def index() -> str:
     """Homepage route for Holberton webpage"""
     return render_template("index.html")
