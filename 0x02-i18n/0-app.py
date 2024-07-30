@@ -2,7 +2,6 @@
 """Module which handles the web app logic and routes as well as
 the internationalization and localization"""
 
-from email.policy import strict
 from flask import Flask
 from flask import render_template
 
