@@ -3,7 +3,8 @@
 the internationalization and localization"""
 
 from babel import default_locale
-from flask import Flask, request
+from flask import Flask
+from flask import request
 from flask import render_template
 from flask_babel import Babel
 from flask_babel import gettext
