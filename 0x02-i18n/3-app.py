@@ -31,14 +31,15 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-home_title = gettext("test_title")
-home_header = gettext("home_header")
+home_title = gettext("Welcome to Holberton")
+home_header = gettext("Hello world!")
 
 
 @app.route("/", strict_slashes=False)
 def index() -> str:
     """Homepage route for Holberton webpage"""
-    return render_template("3-index.html", home_title =home_title, home_header=home_header)
+    return render_template("3-index.html", home_title=home_title,
+                           home_header=home_header)
 
 
 if __name__ == "__main__":
