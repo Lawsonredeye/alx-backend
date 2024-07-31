@@ -7,6 +7,7 @@ from flask import Flask, request
 from flask import render_template
 from flask_babel import Babel
 from flask_babel import gettext
+from flask_babel import _
 from pytz import UTC
 
 app: Flask = Flask(__name__)
