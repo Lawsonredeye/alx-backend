@@ -37,7 +37,7 @@ home_header = gettext("home_header")
 @app.route("/", strict_slashes=False)
 def index() -> str:
     """Homepage route for Holberton webpage"""
-    return render_template("3-index.html")
+    return render_template("3-index.html", home_title =home_title, home_header=home_header)
 
 
 if __name__ == "__main__":
