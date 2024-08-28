@@ -1,8 +1,8 @@
 const kue = require('kue');
 
 const jobObject = {
-  phoneNumber: "",
-  message: ""
+  phoneNumber: "234-890-747-42623",
+  message: "Confirm phone number"
 };
 
 // Creates Queue object
