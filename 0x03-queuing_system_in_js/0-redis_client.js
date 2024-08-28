@@ -1,13 +1,12 @@
 import { createClient } from 'redis';
 
+client = createClient();
 async function nodeRedis() {
   try {
-    const client = createClient();
-    await client.connected;
-    console.log('Redis client connected to the server');    
+    await client.connect()
+    console.log('Redis client connected to the server');   
   } catch (error) {
     console.log('Redis client not connected to the server:', error);
   }
 }
-
 nodeRedis()
