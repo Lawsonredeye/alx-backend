@@ -8,7 +8,7 @@ const jobObject = {
 // Creates Queue object
 const push_nofication_code = kue.createQueue();
 
-const jobs = push_nofication_code.create('notification',jobObject).save((err) => {
+const jobs = push_nofication_code.create('push_notification_code', jobObject).save((err) => {
   if (!err) {
     console.log(`Notification job created: ${jobs.id}`);
   }
