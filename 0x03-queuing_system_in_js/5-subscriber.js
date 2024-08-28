@@ -8,10 +8,8 @@ async function runRedis() {
   await client.subscribe('holberton school channel', (message) => {
     console.log(message);
     if (message === 'KILL_SERVER') {
-      console.log('I was called!');
       client.unsubscribe('holberton school channel')
       client.quit();
-      // client.disconnect();
     }
   });
 }
